@@ -15,14 +15,16 @@
   <body>
     <header class="site-header">
       <div class="wrapper" data-width="wide">
-        <img src="/assets/fungi-finders.svg" alt="Fungi Finders" />
-        <nav class="primary-navigation">
-          <ul>
-            <li><a href="/">Discover</a></li>
-            <li><a href="#">Mushroom Guide</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </nav>
+        <div class="site-header__inner"></div>
+          <img src="/assets/fungi-finders.svg" alt="Fungi Finders" />
+          <nav class="primary-navigation">
+            <ul>
+              <li><a href="/">Discover</a></li>
+              <li><a href="#">Mushroom Guide</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
@@ -59,39 +61,40 @@
             culinary treasure.
           </p>
           <!-- three columns -->
-          <div class="card">
+          <div class="equal-columns">
+            <div class="card">
+              <img
+                src="/assets/outdoor-exploration.webp"
+                alt="Tightly grouped brown mushrooms growing up a mossy tree trunk"
+              />
+              <h3>Outdoor Exploration</h3>
+              <p>
+                Mushroom foraging takes you off the beaten path and into the heart
+                of nature. Learn to read the landscape, identifying prime mushroom
+                habitats from lush forest floors to sun-dappled meadows. Every
+                expedition is a new adventure, with the potential for exciting
+                discoveries around every tree and under every log.
+              </p>
+            </div>
+            <div class="card">
+              <img
+                src="/assets/botanical-expertise.webp"
+                alt="Wild mushrooms on a table"
+              />
+              <h3>Botanical Expertise</h3>
+              <p>
+                Dive into the intricate world of fungal biology. Discover the
+                unique structures of mushrooms, from caps to gills to spores.
+                Learn to use field guides and identification keys to distinguish
+                between species. With practice, you'll start to see the forest in
+                a whole new light, recognizing the vital role fungi play in
+                ecosystem health.
+              </p>
+            </div>
+            <div class="card">
             <img
-              src="/assets/outdoor-exploration.webp"
-              alt="Tightly grouped brown mushrooms growing up a mossy tree trunk"
-            />
-            <h3>Outdoor Exploration</h3>
-            <p>
-              Mushroom foraging takes you off the beaten path and into the heart
-              of nature. Learn to read the landscape, identifying prime mushroom
-              habitats from lush forest floors to sun-dappled meadows. Every
-              expedition is a new adventure, with the potential for exciting
-              discoveries around every tree and under every log.
-            </p>
-          </div>
-          <div class="card">
-            <img
-              src="/assets/botanical-expertise.webp"
-              alt="Wild mushrooms on a table"
-            />
-            <h3>Botanical Expertise</h3>
-            <p>
-              Dive into the intricate world of fungal biology. Discover the
-              unique structures of mushrooms, from caps to gills to spores.
-              Learn to use field guides and identification keys to distinguish
-              between species. With practice, you'll start to see the forest in
-              a whole new light, recognizing the vital role fungi play in
-              ecosystem health.
-            </p>
-          </div>
-          <div class="card">
-            <img
-              src="/assets/culinary-delight.webp"
-              alt="Plate of food with mushrooms on top"
+                src="/assets/culinary-delight.webp"
+                alt="Plate of food with mushrooms on top"
             />
             <h3>Culinary Delights</h3>
             <p>
@@ -105,7 +108,6 @@
           </div>
         </div>
       </section>
-
       <section class="background-accent section" data-padding="compact">
         <div class="wrapper" data-width="narrow">
           <h2 class="section-title">
@@ -122,7 +124,10 @@
       <section class="background-extra-dark section">
         <!-- two columns -->
         <div class="wrapper" data-width="wide">
-          <div>
+          <div class="equal-columns" 
+            data-gap="large"
+            data-alignment="centered"
+          >
             <div>
               <img
                 src="/assets/get-to-know.webp"
@@ -154,7 +159,10 @@
       <section class="section">
         <!-- two columns -->
         <div class="wrapper" data-width="wide">
-          <div>
+          <div class="equal-columns"
+            data-gap="large"
+            data-alignment="centered"
+          >
             <h2 class="section-title">Connect with Nature</h2>
             <p> 
               Experience the beauty of the great outdoors while foraging for
