@@ -181,6 +181,16 @@
 
 @layer layout {
 
+  /* selects everything, besides the first direct child */
+  .flow > * + * {
+    margin-top: var(--flow-spacer, 1em);
+  }
+
+  .grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 1rem);
+  }
+
   .equal-columns {
     display: grid;
     gap: var(--equal-columns-gap, 1rem);
@@ -232,26 +242,54 @@
 }
 
 @layer components {
-.site-header {
-  padding-block: 1rem;
-}
+  .site-header {
+    padding-block: 1rem;
+  }
 
   .site-header__inner {
     display: flex;
-    gap: 0.5rem 1rem;
     flex-wrap: wrap;
+    gap: 0.5rem 2rem;
     justify-content: space-between;
   }
 
-  .primay-navigation {
+  .primary-navigation {
     ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
-      gap: 0.5rem 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+
+  .hero {
+    text-align: center;
+    background-image: url(/assets/hero.webp);
+    background-size: cover;
+    font-size: var(--font-size-md);
+    color: var(--text-high-contrast);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-heading-lg);
+
+    > span {
+      display: block;
+      font-size: var(--font-size-heading-xl);
+      color: var(--text-brand);
     }
   }
 }
 
 @layer utilities {
+
   .text-center {
     text-align: center;
   }
