@@ -5,7 +5,6 @@
     box-sizing: border-box;
   }
 
-  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
   html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -25,7 +24,6 @@
     margin: 0;
   }
 
-  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
   [role="list"] {
     list-style: none;
     margin: 0;
@@ -242,6 +240,7 @@
 }
 
 @layer components {
+
   .site-header {
     padding-block: 1rem;
   }
@@ -268,6 +267,28 @@
     }
   }
 
+  .site-footer {
+    text-align: center;
+    background-color: var(--background-dark);
+    padding-block: 2rem;
+    display: grid;
+    gap: 2rem;
+
+    a {
+      color: var(--text-main);
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--text-brand-light);
+    }
+  }
+
+  .site-footer__title {
+    font-size: var(--font-size-lg);
+    font-family: var(--ff-heading);
+    font-weight: 700;
+  }
 
   .hero {
     text-align: center;
@@ -300,8 +321,26 @@
   }
 
   .card__title {
-    font-size: var(--card-title-font-size, var(--font-size-heading-regular));
+    font-size: var(--card-title-font-size, var(--font-size-heading-sm));
     color: var(--card-title-color, var(--text-brand)); 
+  }
+
+  .button {
+    text-decoration: none;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background-color: var(--background-accent-light);
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    border-radius: var(--border-radius-2);
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    color: var(--text-high-contrast);
+    background-color: var(--background-extra-light); 
   }
 }
 
@@ -352,5 +391,15 @@
   }
   .font-size-lg {
     font-size: var(--font-size-lg);
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 }
