@@ -240,7 +240,6 @@
 }
 
 @layer components {
-
   .site-header {
     padding-block: 1rem;
   }
@@ -267,25 +266,89 @@
     }
   }
 
+  [aria-controls="primary-navigation"] {
+    display: none;
+  }
+
+  @media (width < 760px) {
+    [aria-controls="primary-navigation"] {
+      display: block;
+      z-index: 100;
+      background: transparent;
+      border: 0;
+
+      img {
+        border-radius: 0;
+      }
+    }
+
+    [aria-controls="primary-nav"]
+    {
+      display: none;;
+    }
+
+    .site-header {
+      position: relative;
+    }
+
+    .primary-navigation {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      padding: 2rem;
+      border-radius: 0 0 0 var(--border-radius-3);
+      background: var(--background-accent-main);
+
+      ul {
+        flex-direction: column;
+        gap: 0;
+        font-size: var(--fs-700);
+        font-family: var(--ff-heading);
+        font-weight: 700;
+      }
+
+      li + li {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--background-accent-light);
+      }
+    }
+  }
+
+  @media (width < 760px) {
+    [aria-controls="primay-nav"] {
+      display: block;
+    }
+
+    [aria-expanded=true] ~ .primary-navigation {
+      display: block;
+    }
+  }
+
   .site-footer {
-    text-align: center;
     background-color: var(--background-dark);
     padding-block: 2rem;
+    text-align: center;
+
+    /* either use .grid-flow and change the --grid-flow-spacing, or do this */
     display: grid;
     gap: 2rem;
 
     a {
+      text-decoration: none;
       color: var(--text-main);
-    }
 
-    a:hover,
-    a:focus-visible {
-      color: var(--text-brand-light);
+      &:hover,
+      &:focus-visible {
+        color: var(--text-brand-light);
+      }
     }
   }
 
   .site-footer__title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-family: var(--ff-heading);
     font-weight: 700;
   }
@@ -310,7 +373,7 @@
 
   .card {
     display: grid;
-    gap: var(--card-gap, 1rem);;
+    gap: 1rem;
     padding: 1rem;
     background-color: var(--background-light);
     border-radius: var(--border-radius-3);
@@ -321,31 +384,30 @@
   }
 
   .card__title {
+    color: var(--card-title-color, var(--text-brand));
     font-size: var(--card-title-font-size, var(--font-size-heading-sm));
-    color: var(--card-title-color, var(--text-brand)); 
   }
 
   .button {
-    text-decoration: none;
-    font-size: var(--font-size-md);
+    display: inline flex;
     cursor: pointer;
-    display: inline-flex;
-    padding: 0.5rem 1rem;
-    background-color: var(--background-accent-light);
     font-family: var(--ff-heading);
     font-weight: 700;
-    border-radius: var(--border-radius-2);
+    font-size: var(--font-size-md);
+    text-decoration: none;
+    background-color: var(--background-accent-main);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
   }
 
   .button:hover,
   .button:focus-visible {
+    background: var(--background-accent-light);
     color: var(--text-high-contrast);
-    background-color: var(--background-extra-light); 
   }
 }
 
 @layer utilities {
-
   .text-center {
     text-align: center;
   }
