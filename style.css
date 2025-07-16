@@ -588,6 +588,9 @@
 }
 
 @layer utilities {
+  [hidden] {
+    display: none;
+  }
   .text-center {
     text-align: center;
   }
