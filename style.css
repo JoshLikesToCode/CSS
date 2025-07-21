@@ -290,6 +290,9 @@
 
   .site-header {
     padding-block: 1rem;
+
+    overflow-x: clip;
+    position: relative;
   }
 
   .site-header__inner {
@@ -361,6 +364,20 @@
         font-weight: 700;
       }
 
+      li {
+        --delay: 0.3s;
+        translate: 50%;
+        transition: translate 0.3s var(--delay), opacity 0.3s var(--delay);
+      }
+
+      li:nth-child(2) {
+        --delay: 0.4s;
+      }
+
+      li:nth-child(3) {
+        --delay: 0.5s;
+      }
+
       li + li {
         margin-top: 1.5rem;
         padding-top: 1.5rem;
@@ -382,6 +399,16 @@
       @starting-style {
         opacity: 0;
         translate: 0 -100%;
+      }
+
+      li {
+        translate: 0 0;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+          translate: 50% 0;
+        }
       }
     }
   }
