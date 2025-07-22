@@ -634,6 +634,12 @@
   [hidden] {
     display: none;
   }
+
+  .resizing * {
+    transition: none;
+    animation: none;
+  }
+
   .text-center {
     text-align: center;
   }
